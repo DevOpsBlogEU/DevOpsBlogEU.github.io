@@ -22,16 +22,17 @@ The 46elks API credentials must've been added as secrets to your repo:
 1. Head over to the **Actions** tab in the repo.
 1. Choose **Setup a workflow yourself**.
 1. Name the Action file **pr-sms.yml** (you can choose any name you want).
-  1. Set `name` to `Pull Request SMS`.
-  1. Set `on:` to just `pull_request`.
+    1. Set `name` to `Pull Request SMS`.
+    1. Set `on:` to just `pull_request`.
+    1. Change `build:` to `sms:`.
 1. Search the Marketplace for ["46elks"][github-actions-46elks] and copy-paste the example code to your pipeline under **Steps**.
 1. **Optional:** *Remove the other steps defined if you don't want to keep them.*
 1. Specify:
-  1. The `apiUsername` as `{% raw %}${{ secrets.ELKS_API_USERNAME }}{% endraw %}`.
-  1. The `apiPassword` as `{% raw %}${{ secrets.ELKS_API_PASSWORD }}{% endraw %}`.
-  1. The `to` as your phone number(s) in the format `+46701234567,+46702345678` (comma-separated).
-  1. The `from` as `DevOpsBlog`.
-  1. The `message` as `Hello from GitHub Actions!`.
+    1. The `apiUsername` as `{% raw %}${{ secrets.ELKS_API_USERNAME }}{% endraw %}`.
+    1. The `apiPassword` as `{% raw %}${{ secrets.ELKS_API_PASSWORD }}{% endraw %}`.
+    1. The `to` as your phone number(s) in the format `+46701234567,+46702345678` (comma-separated).
+    1. The `from` as `DevOpsBlog`.
+    1. The `message` as `Hello from GitHub Actions!`.
   
 While the phone number(s) could be in plain text I'd prefer to keep them as secrets to not get spammed.
 
@@ -44,7 +45,7 @@ Here's what the pipeline should look like (feel free to copy-paste):
 name: Pull Request SMS
 on: pull_request
 jobs:
-  build:
+  sms:
     runs-on: ubuntu-latest
     steps:
     - name: 46elks SMS
