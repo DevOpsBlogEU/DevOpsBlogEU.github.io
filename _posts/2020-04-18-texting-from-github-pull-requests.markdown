@@ -24,7 +24,7 @@ The 46elks API credentials must've been added as secrets to your repo:
 1. Name the Action file **pr-sms.yml** (you can choose any name you want).
   1. Set `name` to `Pull Request SMS`.
   1. Set `on:` to just `pull_request`.
-1. Search the Marketplace for "46elks" and copy-paste the example code to your pipeline under **Steps**.
+1. Search the Marketplace for ["46elks"][github-actions-46elks] and copy-paste the example code to your pipeline under **Steps**.
 1. **Optional:** *Remove the _other_ steps defined if you don't want to keep them.*
 1. Specify:
   1. The `apiUsername` as `${{ secrets.ELKS_API_USERNAME }}`.
@@ -62,3 +62,4 @@ Press **Start Commit** and commit it to the branch you want, then check if you'v
 
 [46elks-homepage]: https://46elks.se
 [46elks-account]: https://46elks.se/account
+[github-actions-46elks]: https://github.com/marketplace/actions/46elks-sms
