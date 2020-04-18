@@ -36,7 +36,7 @@ The 46elks API credentials must've been added as secrets to your repo:
   
 While the phone number(s) could be in plain text I'd prefer to keep them as secrets to not get spammed.
 
-The `${{ }}` stuff allows you to use variables. The `secrets` are pre-defined by *you* and you need to set them up.
+The `{% raw %}${{ }}{% endraw %}` stuff allows you to use variables. The `secrets` object comes from the Secrets page.
 
 Here's what the pipeline should look like (feel free to copy-paste):
 
