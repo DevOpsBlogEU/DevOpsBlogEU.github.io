@@ -27,8 +27,8 @@ The 46elks API credentials must've been added as secrets to your repo:
 1. Search the Marketplace for "46elks" and copy-paste the example code to your pipeline under **Steps**.
 1. **Optional:** *Remove the _other_ steps defined if you don't want to keep them.*
 1. Specify:
-  1. The `apiUsername` as `$\{{ secrets.ELKS_API_USERNAME }}`.
-  1. The `apiPassword` as `$\{{ secrets.ELKS_API_PASSWORD }}`.
+  1. The `apiUsername` as `${{ secrets.ELKS_API_USERNAME }}`.
+  1. The `apiPassword` as `${{ secrets.ELKS_API_PASSWORD }}`.
   1. The `to` as your phone number(s) in the format `+46701234567,+46702345678` (comma-separated).
   1. The `from` as `DevOpsBlog`.
   1. The `message` as `Hello from GitHub Actions!`.
@@ -40,6 +40,7 @@ The `${{ }}` stuff allows you to use variables. The `secrets` are pre-defined by
 Here's what the pipeline should look like (feel free to copy-paste):
 
 {% highlight yaml %}
+<!-- {% raw %} -->
 name: Pull Request SMS
 on: pull_request
 jobs:
@@ -49,11 +50,12 @@ jobs:
     - name: 46elks SMS
       uses: 46elks/gh-actions-sms@v1.0.2
       with:
-        apiUsername: $\{{ secrets.ELKS_API_USERNAME }}
-        apiPassword: $\{{ secrets.ELKS_API_PASSWORD }}
+        apiUsername: ${{ secrets.ELKS_API_USERNAME }}
+        apiPassword: ${{ secrets.ELKS_API_PASSWORD }}
         to: +46701234567
         from: DevOpsBlog
         message: Hello from GitHub Actions!
+<!-- {% endraw %} -->
 {% endhighlight %}
 
 Press **Start Commit** and commit it to the branch you want, then check if you've received your SMS 😁.
