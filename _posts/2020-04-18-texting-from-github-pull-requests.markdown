@@ -25,7 +25,7 @@ The 46elks API credentials must've been added as secrets to your repo:
   1. Set `name` to `Pull Request SMS`.
   1. Set `on:` to just `pull_request`.
 1. Search the Marketplace for ["46elks"][github-actions-46elks] and copy-paste the example code to your pipeline under **Steps**.
-1. **Optional:** *Remove the _other_ steps defined if you don't want to keep them.*
+1. **Optional:** *Remove the other steps defined if you don't want to keep them.*
 1. Specify:
   1. The `apiUsername` as `{% raw %}${{ secrets.ELKS_API_USERNAME }}{% endraw %}`.
   1. The `apiPassword` as `{% raw %}${{ secrets.ELKS_API_PASSWORD }}{% endraw %}`.
